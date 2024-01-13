@@ -7,9 +7,25 @@ include_once "../assets/book_func.php";
 connect();
 session_start();
 
-$id_user = $_GET["id_user"];
+if (!isset($_GET["page"]) || !isset($_GET["id_user"])) {
+    $_GET["page"] = 0;
+}
+
+$id_user = validateGET($_GET["id_user"]);
+$current_page = validateGET($_GET["page"]);
+
 $user = mysqli_fetch_array(getUserInfo($id_user));
+
+if (!$user) {
+    header("location: index.php");
+}
+
 $name = $user["name"];
+
+$page = 4 * $current_page;
+if ($page == 0) {
+    $_SESSION["amount_of_all_reviews"] = getAmountOfAllUserReviews($id_user);
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,15 +41,33 @@ $name = $user["name"];
 
 <div class="container">
     <div class="user_info">
-        <p>Your name: <?php echo $name?></p>
+        <p>Your name: <?php echo $name ?></p>
         <?php
-        if ($id_user == $_SESSION["id_user"]){
+        if ($id_user == $_SESSION["id_user"]) {
             echo "<a href='edit_profile.php'>Edit profile</a>";
+
+            if (!empty($_SESSION["admin"])) {
+                echo "<a href='delete_profile.php?id_user=$id_user'>Delete profile</a>";
+            }
         }
         ?>
     </div>
 
-    <?php getReviewsByUser($id_user);?>
+    <?php getReviewsByUser($id_user, $page); ?>
+
+    <div class="pag">
+        <?php
+        if ($page != 0) {
+            $page_to_pass = $current_page - 1;
+            echo "<a href='profile.php?id_user=$id_user&page=$page_to_pass'>Previos</a>";
+        }
+
+        if ($page + 4 < $_SESSION["amount_of_all_reviews"]) {
+            $page_to_pass = $current_page + 1;
+            echo "<a href='profile.php?id_user=$id_user&page=$page_to_pass'>Next</a>";
+        }
+        ?>
+    </div>
 </div>
 
 <?php include "footer.html" ?>

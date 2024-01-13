@@ -85,3 +85,41 @@ function setAuthor(string $newAuthor, $id_book):void
     global $conn;
     $conn->query("UPDATE book SET author = '$newAuthor' WHERE id_book = '$id_book'");
 }
+
+function validateBook(): array
+{
+    global $conn;
+    $book_name = mysqli_real_escape_string($conn, $_POST["book_name"]);
+    $author = mysqli_real_escape_string($conn, $_POST["author"]);
+
+    $errors[0] = isBookNameValid($book_name);
+    $errors[1] = isAuthorValid($author);
+
+    if (!empty($_FILES["image"]["type"])) {
+        $image_type = $_FILES["image"]["type"];
+        if (!str_starts_with($image_type, "image")) {
+            $errors[2] = "File is not an image!";
+        }
+    }
+
+    for ($i = 0; $i < 3; $i++) {
+        if ($errors[$i] != "") {
+            return $errors;
+        }
+    }
+
+    return [];
+}
+
+function deleteBook($id_book, $image): void
+{
+    global $conn;
+    if ($image != "smurfs_blankbook2.webp") { //перепиши нахуй
+        unlink("../book_images/$image");
+    }
+
+    $conn->query("DELETE FROM review WHERE id_book = '$id_book'");
+    $conn->query("DELETE FROM book WHERE id_book = '$id_book'");
+}
+
+

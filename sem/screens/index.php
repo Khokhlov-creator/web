@@ -22,9 +22,17 @@ session_start();
     <div class="coll">
         <?php getAllBooks();?>
     </div>
-    <a href="add_book.php">Add</a>
+
+    <?php
+    if (!empty($_SESSION["admin"])) {
+        echo "<a href='add_book.php'>Add book</a>";
+    }
+    ?>
+
 </div>
 <?php include "footer.html" ?>
 
 </body>
 </html>
+
+//Во все формы кроме логина дописать min max required(если надо), кроме логинаб кроме логина.
