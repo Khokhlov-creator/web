@@ -10,7 +10,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/styles_main_page.css">
+    <link rel="stylesheet" href="../styles/styles_about.css">
     <title>Title</title>
 </head>
 
@@ -19,7 +19,8 @@ session_start();
 
 <div class="container">
     <div class="about">
-        BookRev is a specialized website dedicated to the art of literary exploration through insightful book reviews.
+        BookRev <br>
+        is a specialized website dedicated to the art of literary exploration through insightful book reviews.
         Whether you're an avid reader searching for your next literary adventure or an author looking for constructive feedback,
         BookRev offers a curated collection of reviews that delve deep into the heart of each story.
     </div>
@@ -28,5 +29,3 @@ session_start();
 
 </body>
 </html>
-
-//Во все формы кроме логина дописать min max required(если надо), кроме логинаб кроме логина.

@@ -1,19 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html {
-    height: 100%;
-}
 
-body{
+body {
     background-color: Snow;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
-header{
+
+header {
     height: 80px;
     display: flex;
     align-items: center;
@@ -25,76 +23,39 @@ header{
     border-bottom: 1px solid black;
 }
 
+.book_container{
+    margin-bottom: 10%;
+    background-color:  rgb(255 217 168 / 55%);
+    border: 1px solid black;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 495px;
+}
+
+.panel{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.panel button, .panel a {
+    background-color: black;
+    text-align: center;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    line-height: 40px;
+    text-decoration: none;
+    margin-top: 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    color: white;
+}
+
 header a {
     text-decoration: none;
     font-size: 2.3em;
-    color: black;
-}
-.user_info{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.user_info p{
-    background-color: rgb(255 217 168 / 55%);
-    width: 280px;
-    text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    height: 100%;
-    line-height: 30px;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: 1px solid black;
-    border-top:1px rgb(255 217 168 / 55%);
-    color: black;
-}
-
-.edit_profile {
-    background-color: antiquewhite;
-    width: 180px;
-    align-self: flex-start;
-    text-align: center;
-    border-radius: 20px;
-    height: 40px;
-    line-height: 40px;
-    text-decoration: none;
-    margin-top: 30px;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: 1px solid black;
-    color: black;
-}
-.edit_password {
-    background-color: antiquewhite;
-    width: 180px;
-
-    text-align: center;
-    border-radius: 20px;
-    height: 40px;
-    line-height: 40px;
-    text-decoration: none;
-    margin-top: 30px;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: 1px solid black;
-    color: black;
-}
-.delete_profile {
-    background-color: antiquewhite;
-    width: 180px;
-
-    text-align: center;
-    border-radius: 20px;
-    height: 40px;
-    line-height: 40px;
-    text-decoration: none;
-    margin-top: 30px;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: 1px solid black;
     color: black;
 }
 
@@ -105,34 +66,36 @@ header a {
     padding-right: 10%;
     padding-left: 10%;
     width: 100%;
+
 }
 
-
-nav{
+nav {
     flex: 1;
     text-align: right;
 }
-
 
 nav a {
     margin-right: 20px;
     color: black;
 }
 
-nav ul li{
-    list-style: none;
-    display: inline-block;
-    margin-left: 5%;
+.book_info label{
+    padding-left: 20px;
 }
 
-nav ul li a{
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 30px;
-
+.book_info input{
+    margin-top: 20px;
 }
 
-.review{
+#book img {
+    width: 450px;
+    margin: 20px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.review, .review_make{
     display: flex;
     margin-bottom: 20px;
     font-size: 1.3em;
@@ -140,13 +103,36 @@ nav ul li a{
     padding: 15px;
     border-radius: 20px;
     border: 1px solid black;
+    margin-right: 20px;
+    margin-left: 20px;
 }
+
+
+.review_make input[type=text]{
+    padding: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    width: 100%;
+}
+.review_make input[type=submit]{
+    margin-top:20px;
+    align-self: center;
+    width: 50%;
+    height: 40px;
+}
+
+
 
 .review img{
     width: 110px;
     border-radius: 100%;
     height: 110px;
     border: 1px solid black;
+}
+
+.review_make{
+    flex-direction: column;
 }
 
 .review a {
@@ -163,6 +149,7 @@ nav ul li a{
     flex: 1;
     display: flex;
     justify-content: end;
+    color: black;
 }
 
 .review_details {
@@ -173,6 +160,6 @@ nav ul li a{
 }
 
 
-
-
-
+input {
+    font-weight: 600;
+}

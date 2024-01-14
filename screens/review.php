@@ -66,16 +66,22 @@ if (isset($_POST["submit"])) {
 
 
     <form action="review.php?id_review=<?php echo $id_review ?>" method="post" class = "review">
-        <label for = "review_name" class="review_name">Review name:
-            <input name='review_name' id="review_name" value='<?php echo $review_name ?>' readonly>
-        </label>
-        <span><?php echo $review_name_response?></span>
-        <label for = "review_text" class="review_text">Review:
-            <input name='review_text' id="review_text" value='<?php echo $review_text ?>' readonly>
-        </label>
-        <span><?php echo $review_text_response?></span>
+        <label for = "review_name">Review name:</label>
+            <input name='review_name' id="review_name" class="review_name" value='<?php echo $review_name ?>' readonly>
 
-        <label id="review_edit_submit"></label>
+        <span><?php echo $review_name_response?></span>
+        <label for = "review_text" >Review:</label>
+            <input name='review_text' id="review_text" class="review_text" value='<?php echo $review_text ?>' readonly>
+
+        <span><?php echo $review_text_response?></span>
+        <div class="time">
+            <?php
+            $date = date_create($review["review_date"]);
+            echo date_format($date, "d.m.Y");
+            ?>
+        </div>
+        <label id="review_edit_submit" class='save'></label>
+
     </form>
 
     <?php
@@ -87,10 +93,7 @@ if (isset($_POST["submit"])) {
     }
     ?>
 
-    <?php
-    $date = date_create($review["review_date"]);
-    echo date_format($date, "d.m.Y");
-    ?>
+
 </div>
 
 <?php include "footer.html" ?>

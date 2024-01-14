@@ -1,15 +1,18 @@
 <?php
 function connect(): void
 {
-    $db_host = '127.0.0.1';
-    $db_user = 'root';
-    $db_password = '';
+    $db_host = 'localhost';
+    $db_user = 'khokhdmi';
+    $db_password = 'webove aplikace';
     $db_name = 'khokhdmi';
 
     global $conn;
     try {
         $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-    } catch (mysqli_sql_exception) {
+        if (!$conn){
+           throw new Exception(mysqli_connect_error());
+        }
+    } catch (Exception $e) {
         die('Database is not connected: ');
     }
 }

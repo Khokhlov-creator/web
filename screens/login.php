@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/styles_main_page.css">
+    <link rel="stylesheet" href="../styles/styles_login.css">
     <title>Log in</title>
 </head>
 
@@ -33,12 +33,12 @@ if (isset($_POST["submit"])) {
 <?php include "header.php" ?>
 
 <div class="container">
-    <form action="login.php" method="post">
-        <label for="username">Username</label>
+    <form action="login.php" method="post" class="login">
+        <label for="username"></label>
         <input type="text" id="username" name="username" placeholder="Enter your username...">
         <span><?php echo $username_response?></span>
 
-        <label for="psswd">Password</label>
+        <label for="psswd"></label>
         <input type="password" id="psswd" name="psswd" placeholder="Enter your password...">
         <span><?php echo $password_response?></span>
 

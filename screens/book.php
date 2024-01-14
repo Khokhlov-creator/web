@@ -65,7 +65,7 @@ if (isset($_POST["edit"])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/styles_main_page.css">
+    <link rel="stylesheet" href="../styles/styles_book.css">
     <title>Title</title>
 </head>
 
@@ -73,34 +73,43 @@ if (isset($_POST["edit"])) {
 <?php include "header.php" ?>
 
 <div class="container" id="book">
-    <form action="book.php?id_book=<?php echo $id_book ?>" method="post">
-        <label>
-            <input id="book_name" name="book_name" value="<?php echo $book_name ?>" readonly  minlength="4" maxlength="32" required>
-        </label>
-        <span><?php echo $book_name_response ?></span>
+    <div class="book_container">
+    <form action="book.php?id_book=<?php echo $id_book ?>" method="post" class="book_info">
 
-        <label>
-            <input id="author" name="author" value="<?php echo $author ?>" readonly  minlength="3" maxlength="32" required>
-        </label>
-        <span><?php echo $author_response ?></span>
+            <label>
+                Book:
+                <input id="book_name" name="book_name" value="<?php echo $book_name ?>" readonly  minlength="4" maxlength="32" required>
+            </label>
+            <span><?php echo $book_name_response ?></span>
 
-        <label id="book_edit_submit"></label>
+            <label>
+                By:
+                <input id="author" name="author" value="<?php echo $author ?>" readonly  minlength="3" maxlength="32" required>
+            </label>
+            <span><?php echo $author_response ?></span>
+
+            <label id="book_edit_submit"></label>
+
+
     </form>
     <?php
     if (isset($_SESSION["admin"])) {
-        echo "<button id='edit_book'>Edit book data</button>
+        echo "<div class='panel'>
+                <button id='edit_book'>Edit book data</button>
               <script src='../js/edit_book.js'></script>
              
-              <a href='delete_book.php?id_book=$id_book'>Delete book</a>";
+              <a href='delete_book.php?id_book=$id_book'>Delete book</a>
+                </div>";
     }
     ?>
 
     <img src="../book_images/<?php echo $book_image ?>" alt="image">
+    </div>
 </div>
 
 <?php
 if (!empty($_SESSION["id_user"])) {
-    echo "<form action='book.php?id_book=$id_book' method='post'>
+    echo "<form action='book.php?id_book=$id_book' method='post' class='review_make'>
             <label for='review_name'>Title of review</label>
             <input type='text' id='review_name' name='review_name' placeholder='Title...' value='$review_name' minlength='4' maxlength='32' required>
             <span>$review_name_response</span>

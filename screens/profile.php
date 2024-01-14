@@ -42,7 +42,7 @@ if ($page == 0) {
 <div class="container">
     <div class="user_info">
         <?php
-        if(!empty($_SESSION["id_user"]) && ($id_user != $_SESSION["id_user"])){
+        if(!empty($_SESSION["id_user"]) && ($id_user != $_SESSION["id_user"]) || (empty($_SESSION["id_user"]))){
           echo "<p>Username: $name </p>";
         } else {
             echo "<p>Your name: $name </p>";

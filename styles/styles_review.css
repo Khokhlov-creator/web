@@ -14,7 +14,7 @@ body{
     height: 100%;
 }
 header{
-    height: 12%;
+    height: 80px;
     display: flex;
     align-items: center;
     padding-right: 5%;
@@ -37,7 +37,7 @@ header a {
     margin-bottom: 20px;
 }
 
-.links a{
+.links a {
     background-color: rgb(255 217 168 / 55%);
     width: 280px;
     text-align: center;
@@ -56,21 +56,52 @@ header a {
 .review {
     background-color: antiquewhite;
     align-self: center;
-    text-align: center;
     border-radius: 20px;
     line-height: 40px;
     text-decoration: none;
     margin-top: 30px;
-    font-size: 1.2em;
     font-weight: bold;
     border: 1px solid black;
     color: black;
     width: 100%;
-    height: 230px;
+    height: 280px;
     padding: 8px 12px;
     box-sizing: border-box;
     display: grid;
 
+}
+
+.save{
+    justify-self: center;
+    width: 100%;
+}
+
+.save input{
+    background-color: antiquewhite;
+    border-radius: 20px;
+    height: 40px;
+    width: 20%;
+    line-height: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
+    color: black
+}
+
+button{
+    background-color: rgb(255 217 168 / 55%);
+    width: 10%;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
+    border-top: 1px rgb(255 217 168 / 55%);
+    color: black;
+    align-self: flex-end;
 }
 
 .delete_review{
@@ -83,23 +114,24 @@ header a {
     line-height: 40px;
     text-decoration: none;
     margin-top: 30px;
-    font-size: 0.9em;
     font-weight: bold;
     border: 1px solid black;
     color: black;
 }
 
-label{
+label .review_text, .review_name{
     justify-self: baseline;
     width: 100%;
+
 }
 
 .review_name{
-    width: 20%;
-
+    max-width: 50%;
 }
-.review_name input{
-    font-size: 18px;
+
+.review_name{
+    font-size: 32px;
+
 }
 
 .review_text{
@@ -109,9 +141,15 @@ label{
 input {
     padding: 3px;
     box-shadow: 3px 3px 5px grey;
-    font-size: 14px;
     font-weight: 600;
+
     width: 100%;
+}
+.review_text{
+    font-size: 22px;
+}
+.time{
+    justify-self: end;
 }
 
 .container {
