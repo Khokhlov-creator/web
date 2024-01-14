@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: Snow;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 5%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background-color: rgb(255 217 168 / 55%);
+    border-radius: 0.5%;
+    border-bottom: 1px solid black;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 2.3em;
+    color: black;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 100%;
+
+}
+
+.add_book {
+    background-color: antiquewhite;
+    width: 110px;
+    align-self: end;
+    text-align: center;
+    border-radius: 20px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 1px solid black;
+    color: black;
+}
+
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav a {
+    margin-right: 20px;
+    color: black;
+}
+
+#book img {
+    width: 30%;
+    margin: 20px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 30px;
+
+}
+
+p {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.coll {
+    width: 100%;
+    flex-wrap: wrap;
+    border-radius: 2.6%;
+    margin-top: 3%;
+    display: flex;
+    background-color: rgb(255 217 168 / 55%);
+    padding: 3%;
+    border: 1px solid black;
+}
+
+.coll a {
+    flex: 1;
+}
+
+.card {
+    width: 240px;
+    height: 100%;
+    margin: 10px;
+
+}
+
+img {
+    border-radius: 10px;
+    height: 400px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.card:hover {
+    opacity: .5;
+}
+
+.tmp {
+    margin-top: 10%;
+    width: 50%;
+
+}
+
+.review{
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    background-color: rgb(255 217 168 / 55%);
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.tmp a {
+    text-decoration: none;
+    width: 50%;
+}
+
+.review img{
+    width: 110px;
+    border-radius: 100%;
+    height: 110px;
+    border: 1px solid black;
+}
+
+
+.review a {
+    margin-right: 20px;
+    color: white;
+}
+
+.review_links {
+    display: flex;
+}
+
+.review_links .links {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    color: black;
+}
+
+.review_details {
+    flex: 1;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
